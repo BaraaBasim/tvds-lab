@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time-Varying Data Science Group — Tsinghua SIGS</title>
+  <meta name="description" content="The Time-Varying Data Science (TVDS) Group at Tsinghua Shenzhen International Graduate School, led by Prof. Ercan E. Kuruoglu. Bayesian learning, graph signal processing, and statistical signal processing for time-evolving data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='10' r='3' fill='%234f46e5'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%237c3aed'/%3E%3Ccircle cx='16' cy='24' r='3' fill='%2306b6d4'/%3E%3Cpath d='M8 10 24 8 16 24Z' stroke='%234f46e5' stroke-width='1.2' fill='none' opacity='.5'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 10 24 8 16 24Z" stroke="#4f46e5" stroke-width="1.4" fill="none" opacity=".5"/>
+          <circle cx="8" cy="10" r="3.2" fill="#4f46e5"/>
+          <circle cx="24" cy="8" r="3.2" fill="#7c3aed"/>
+          <circle cx="16" cy="24" r="3.2" fill="#06b6d4"/>
+        </svg>
+        <span>TVDS Group<span class="brand__sub">Tsinghua SIGS</span></span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="professor.html">Professor</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="professor.html#join">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <canvas id="graph-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+    <div class="container hero__inner">
+      <span class="hero__tag"><span class="dot"></span> Time Evolution in Data Science</span>
+      <h1>Learning from data that <span class="text-gradient">changes over time</span>.</h1>
+      <p class="hero__lead">
+        We develop Bayesian, statistical, and graph-based methods to model, predict,
+        and understand signals that evolve across time and over networks.
+      </p>
+      <div class="hero__cta">
+        <a href="#research" class="btn btn--primary">Explore our research</a>
+        <a href="professor.html#join" class="btn btn--ghost">Join the lab</a>
+      </div>
+      <p class="hero__affil">Institute of Data and Information · Tsinghua Shenzhen International Graduate School</p>
+    </div>
+  </header>
+
+  <!-- ============ INTRO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2" style="align-items:center; gap:48px;">
+        <div class="reveal">
+          <p class="section__eyebrow">About the group</p>
+          <h2>A research group built around the dimension of time.</h2>
+          <p class="section__lead">
+            The Time-Varying Data Science (TVDS) Group studies how to reason about data whose
+            structure and statistics are non-stationary — changing as time passes and as the
+            relationships between entities evolve. Led by Prof. Ercan E. Kuruoglu, we bring together
+            statistical signal processing, Bayesian learning, and graph machine learning to build
+            models that are robust, interpretable, and aware of uncertainty.
+          </p>
+          <p class="section__lead">
+            Our methods are applied to climate, financial, genomic, and remote-sensing data, where
+            understanding change is the whole point.
+          </p>
+        </div>
+        <div class="reveal grid grid--2" style="gap:18px;">
+          <div class="card" style="text-align:center;">
+            <div style="font-family:var(--font-head); font-size:2.2rem; font-weight:700; color:var(--indigo);">Top&nbsp;2%</div>
+            <p>PI ranked among the world's most-cited scientists</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="font-family:var(--font-head); font-size:2.2rem; font-weight:700; color:var(--violet);">Bayesian</div>
+            <p>Uncertainty-aware learning at the core</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="font-family:var(--font-head); font-size:2.2rem; font-weight:700; color:var(--teal);">Graphs</div>
+            <p>Signal processing over evolving networks</p>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="font-family:var(--font-head); font-size:2.2rem; font-weight:700; color:var(--indigo);">Shenzhen</div>
+            <p>Based at Tsinghua SIGS, China</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH AREAS ============ -->
+  <section class="section section--soft" id="research">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:36px;">
+        <p class="section__eyebrow">Research directions</p>
+        <h2>What we work on</h2>
+        <p class="section__lead">Methodological depth across statistics, signal processing, and machine learning — unified by the question of how things change.</p>
+      </div>
+      <div class="grid grid--3">
+
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17c3-8 6-8 9 0s6 8 9 0"/><circle cx="3" cy="17" r="1.4" fill="currentColor"/><circle cx="21" cy="17" r="1.4" fill="currentColor"/></svg>
+          </div>
+          <h3>Bayesian Learning</h3>
+          <p>Probabilistic models that quantify uncertainty and adapt as new data arrives — from inference to sequential decision-making.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="7" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 7 16 7.5M7 8 11 16M17 9 13 16"/></svg>
+          </div>
+          <h3>Graph Signal Processing</h3>
+          <p>Processing and predicting signals defined on the nodes and edges of networks, including time-varying and dynamic topologies.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20V4M3 20h18M7 16l4-6 3 3 5-8"/></svg>
+          </div>
+          <h3>Statistical Signal Processing</h3>
+          <p>Non-Gaussian and impulsive data, stable distributions, and robust adaptive algorithms for real-world noisy signals.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+          </div>
+          <h3>Topological Data Analysis</h3>
+          <p>Capturing the shape of high-dimensional data with simplicial and topological methods for statistical learning.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14a8 8 0 0 1 16 0M4 14c0 3 2 5 4 5M20 14c0 3-2 5-4 5M8 19h8M12 5v0"/><circle cx="12" cy="9" r="2"/></svg>
+          </div>
+          <h3>Stochastic Deep Learning</h3>
+          <p>Dynamic and statistical deep-learning approaches for non-deterministic, non-stationary systems.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg>
+          </div>
+          <h3>Applications</h3>
+          <p>Climate, financial, genomic, and remote-sensing data — where modelling change drives real scientific impact.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA STRIP ============ -->
+  <section class="section">
+    <div class="container reveal">
+      <div class="card" style="background:var(--accent-grad); color:#fff; text-align:center; border:0; padding:48px 28px;">
+        <h2 style="color:#fff;">Interested in joining us?</h2>
+        <p style="color:rgba(255,255,255,.9); max-width:56ch; margin:0 auto 1.4rem;">
+          We welcome motivated PhD students, postdocs, and visiting researchers with a background in
+          signal processing, statistics, machine learning, or mathematics.
+        </p>
+        <a href="professor.html#join" class="btn btn--ghost" style="color:#fff; border-color:rgba(255,255,255,.6);">See opportunities →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M8 10 24 8 16 24Z" stroke="#7c8bff" stroke-width="1.4" fill="none" opacity=".6"/>
+              <circle cx="8" cy="10" r="3.2" fill="#6366f1"/><circle cx="24" cy="8" r="3.2" fill="#a78bfa"/><circle cx="16" cy="24" r="3.2" fill="#22d3ee"/>
+            </svg>
+            Time-Varying Data Science Group
+          </div>
+          <p style="color:#8b94c4; font-size:.92rem; max-width:38ch;">Institute of Data and Information,<br/>Tsinghua Shenzhen International Graduate School, Shenzhen, China.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="professor.html">Professor</a>
+          <a href="publications.html">Publications</a>
+          <a href="people.html">People</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:kuruoglu@sz.tsinghua.edu.cn">kuruoglu@sz.tsinghua.edu.cn</a>
+          <a href="professor.html#join">Open positions</a>
+          <a href="https://scholar.google.com/citations?user=To7e1toAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Time-Varying Data Science Group · Tsinghua SIGS</span>
+        <span>Built for research on data that changes.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
