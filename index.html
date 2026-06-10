@@ -71,6 +71,7 @@
           understanding change is the whole point.
         </p>
         <div class="tags" style="margin-top:18px;">
+          <span class="tag">Heavy-Tailed Distributions</span>
           <span class="tag">Bayesian Learning</span>
           <span class="tag">Graph Signal Processing</span>
           <span class="tag">Statistical Signal Processing</span>
@@ -92,6 +93,40 @@
       <!-- Graph is built by assets/js/main.js from a single data source. -->
       <div class="research-graph reveal" id="researchGraph" role="group" aria-label="Research directions graph"></div>
       <div class="research-list" id="researchList"></div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK SWAN / HEAVY TAILS ============ -->
+  <section class="section" id="blackswan">
+    <div class="container swan-demo">
+      <div class="reveal">
+        <p class="section__eyebrow">Heavy tails &amp; black swans</p>
+        <h2>Expecting the unexpected.</h2>
+        <p class="section__lead">
+          Most models assume the world is Gaussian — that extremes are vanishingly rare.
+          Real data disagrees: market crashes, atmospheric bursts, and impulsive noise are
+          <em>black swans</em>, events far larger than a bell curve would ever predict.
+        </p>
+        <p class="section__lead">
+          Much of our work builds on α-stable distributions and dynamic statistics —
+          models that take heavy tails seriously, so the rare event is part of the theory
+          rather than an outlier to be discarded.
+        </p>
+        <a href="publications.html?topic=heavy-tails" class="btn btn--ghost">Heavy-tail publications →</a>
+      </div>
+      <div class="swan-demo__card reveal" id="swanDemo">
+        <div class="swan-demo__head">
+          <label for="alphaSlider">Tail index α = <span id="alphaVal">1.7</span></label>
+        </div>
+        <input type="range" id="alphaSlider" min="1.1" max="2" step="0.05" value="1.7" aria-label="Tail index alpha" />
+        <div class="swan-demo__scale"><span>← heavy tails</span><span>Gaussian →</span></div>
+        <canvas id="swanCanvas" aria-label="Live samples from an alpha-stable distribution; extreme values are marked with a black swan"></canvas>
+        <div class="swan-demo__foot">
+          <span class="swan-icon" aria-hidden="true"></span>
+          <span>Black swans observed: <strong id="swanCount">0</strong></span>
+          <span class="swan-demo__hint">Drag α down and watch the extremes appear.</span>
+        </div>
+      </div>
     </div>
   </section>
 
