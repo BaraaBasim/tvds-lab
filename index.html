@@ -120,26 +120,12 @@
         </div>
         <input type="range" id="alphaSlider" min="1.1" max="2" step="0.05" value="1.7" aria-label="Tail index alpha" />
         <div class="swan-demo__scale"><span>← heavy tails</span><span>Gaussian →</span></div>
-        <canvas id="swanCanvas" aria-label="Live samples from an alpha-stable distribution; extreme values are marked with a black swan"></canvas>
+        <canvas id="swanCanvas" aria-label="Live samples from an alpha-stable distribution, scaled so alpha equals 2 is a standard Gaussian; any value beyond 3 standard deviations is marked with a black swan"></canvas>
         <div class="swan-demo__foot">
           <span class="swan-icon" aria-hidden="true"></span>
           <span>Black swans observed: <strong id="swanCount">0</strong></span>
-          <span class="swan-demo__hint">Drag α down and watch the extremes appear.</span>
+          <span class="swan-demo__hint">A black swan is any sample beyond 3σ — a 1-in-370 event if the world were truly Gaussian. Drag α down and watch them multiply.</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA STRIP ============ -->
-  <section class="section">
-    <div class="container reveal">
-      <div class="card" style="background:var(--accent-grad); color:#fff; text-align:center; border:0; padding:48px 28px;">
-        <h2 style="color:#fff;">Interested in joining us?</h2>
-        <p style="color:rgba(255,255,255,.9); max-width:56ch; margin:0 auto 1.4rem;">
-          We welcome motivated PhD students, postdocs, and visiting researchers with a background in
-          signal processing, statistics, machine learning, or mathematics.
-        </p>
-        <a href="professor.html#join" class="btn btn--ghost" style="color:#fff; border-color:rgba(255,255,255,.6);">See opportunities →</a>
       </div>
     </div>
   </section>

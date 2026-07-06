@@ -258,7 +258,11 @@
 
     var ctx = canvas.getContext("2d");
     var alpha = parseFloat(slider.value);
-    var THRESHOLD = 6, MAXU = 10, DX = 6, STEP = 75;
+    /* A black swan = a sample beyond SIGMA standard deviations. The sampler
+       is normalised so α = 2 is exactly N(0,1), so this is a real σ count
+       (the 3σ rule: a true Gaussian exceeds ±3σ only ~0.27% of the time). */
+    var SIGMA = 3;
+    var THRESHOLD = SIGMA, MAXU = 5, DX = 6, STEP = 75;
     var values = [], flags = [], count = 0;
 
     var swanBody = new Path2D(SWAN_BODY);
@@ -276,7 +280,7 @@
     function compress(v) {
       var av = Math.abs(v);
       var cv = av <= THRESHOLD ? av :
-        Math.min(THRESHOLD + 1.6 * Math.log2(av / THRESHOLD + 1), MAXU);
+        Math.min(THRESHOLD + 0.6 * Math.log2(av / THRESHOLD), MAXU);
       return (v < 0 ? -cv : cv);
     }
 
@@ -293,7 +297,10 @@
     }
 
     function push() {
-      var v = sampleSaS(alpha);
+      /* /√2 rescales the standard α-stable so that at α = 2 it is exactly
+         N(0,1) — the raw CMS variable has variance 2 there. So v is now
+         measured in standard deviations of the α = 2 (Gaussian) case. */
+      var v = sampleSaS(alpha) / Math.SQRT2;
       var extreme = Math.abs(v) > THRESHOLD;
       values.push(v); flags.push(extreme);
       if (extreme) { count++; countEl.textContent = count; }
@@ -331,9 +338,13 @@
       ctx.beginPath(); ctx.moveTo(0, mid); ctx.lineTo(w, mid); ctx.stroke();
       ctx.setLineDash([4, 5]);
       ctx.strokeStyle = "#d9c9b8";
+      ctx.fillStyle = "#b39a7e";
+      ctx.font = "600 11px Inter, system-ui, sans-serif";
+      ctx.textBaseline = "middle";
       [-1, 1].forEach(function (s) {
         var y = mid - s * THRESHOLD * unit;
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+        ctx.fillText((s > 0 ? "+" : "−") + SIGMA + "σ", 6, s > 0 ? y - 8 : y + 8);
       });
       ctx.setLineDash([]);
 

@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Private survey data (member emails, consent records, raw photos)
+Labpagemembersinformation（收集结果）/
